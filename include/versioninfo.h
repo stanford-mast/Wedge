@@ -18,28 +18,19 @@
 
 /* -------- CONSTANTS ------------------------------------------------------ */
 
-#define GRAZELLE_PROGRAM_NAME                   "Grazelle"
-#define GRAZELLE_PROGRAM_VERSION                "1.1-wedge"
+#define GRAZELLE_PROGRAM_NAME                   "Wedge"
+#define GRAZELLE_PROGRAM_VERSION                "1.0"
 
 
 /* -------- PLATFORM-SPECIFIC CHECKS AND MACROS ---------------------------- */
 
-#if defined(_WIN64)
-
-#define GRAZELLE_PLATFORM_NAME                  "Windows/msvcrt x64"
-#define GRAZELLE_WINDOWS
-
-#ifndef _MSC_BUILD
-#error "Your compiler is not supported. Compile with Microsoft Visual Studio when targetting Windows."
-#endif
-
-#elif defined(__gnu_linux__) && defined(__amd64__)
+#if defined(__gnu_linux__) && defined(__amd64__)
 
 #define GRAZELLE_PLATFORM_NAME                  "Linux/glibc x64"
 #define GRAZELLE_LINUX
 
 #else
-#error "Your platform is not supported. Grazelle is intended for Windows or GNU-compatible Linux on x86-64."
+#error "Your platform is not supported. Wedge is intended for GNU-compatible Linux on x86-64."
 #endif
 
 

@@ -44,7 +44,7 @@ LD                          = g++
 
 CCFLAGS                     = -g -O3 -Wall -std=c11 -masm=intel -march=core-avx2 -mno-vzeroupper -pthread -I$(INCLUDE_DIR) -I$(THIRD_PARTY_INCLUDE_DIR) -D_GNU_SOURCE
 CXXFLAGS                    = -g -O3 -Wall -std=c++11 -masm=intel -march=core-avx2 -mno-vzeroupper -pthread -I$(INCLUDE_DIR) -I$(THIRD_PARTY_INCLUDE_DIR)
-LDFLAGS                     = -g -L$(THIRD_PARTY_LIB_DIR) -Wl,--verbose
+LDFLAGS                     = -g -L$(THIRD_PARTY_LIB_DIR)
 
 
 # --------- EXPERIMENTS -------------------------------------------------------

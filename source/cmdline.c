@@ -212,6 +212,7 @@ void cmdline_helper_print_usage_and_exit(char* argv0)
     {
         printf("  %ca application-name\n", CMDLINE_SWITCH_CHAR);
         printf("        Name of the application to execute.\n");
+        printf("        See \"application.c\" for supported values.\n");
     }
     
     if (cmdline_helper_is_recognized_option('i'))
@@ -256,7 +257,8 @@ void cmdline_helper_print_usage_and_exit(char* argv0)
     if (cmdline_helper_is_recognized_option('o'))
     {
         printf("  %co output-file\n", CMDLINE_SWITCH_CHAR);
-        printf("        Path of the file to write as output. Will contain vertex ranks.\n");
+        printf("        Path of the file to write as output.\n");
+        printf("        Will contain final vertex values.\n");
     }
 	
 	if (cmdline_helper_is_recognized_option('r'))
@@ -269,7 +271,7 @@ void cmdline_helper_print_usage_and_exit(char* argv0)
     
     if (cmdline_helper_is_recognized_option('t'))
     {
-        printf("  %ct root-vertex\n", CMDLINE_SWITCH_CHAR);
+        printf("  %ct threshold\n", CMDLINE_SWITCH_CHAR);
         printf("        Frontier fullness threshold.\n");
         printf("        Percentage of active edges above which Wedge is skipped.\n");
         printf("        Defaults to %llu.\n", (long long unsigned int)CMDLINE_DEFAULT_FRONTIER_THRESHOLD_PCT);
