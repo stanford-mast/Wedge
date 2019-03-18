@@ -11,9 +11,11 @@ Wedge is based on [**Grazelle**](https://github.com/stanford-mast/Grazelle-PPoPP
 
 Wedge requires an x86-64-based CPU with support for AVX2 instructions, such as Intel processors of the Haswell generation or later.  NUMA scaling experiments require multiple CPU sockets.  We recommend 256GB DRAM per socket.
 
-Wedge is intended to run on Ubuntu 14.04 or later.  Runtime dependencies include glibc, libnuma (package "libnuma-dev"), and pthreads.  Build dependencies include make, gcc 4.8.4 or later, and as 2.24 or later.
+Wedge is intended to run on Ubuntu 14.04 or later.  Runtime dependencies include glibc, libnuma (package "libnuma-dev"), and pthreads.  Build dependencies include make and gcc 4.8.4 or later.
 
-External dependencies are provided in binary form in this repository.  These are [**Spindle**](https://github.com/stanford-mast/Spindle), [**Silo**](https://github.com/stanford-mast/Silo), [**Parutil**](https://github.com/stanford-mast/Parutil), [**Topo**](https://github.com/stanford-mast/Topo), and [**hwloc**](https://www.open-mpi.org/projects/hwloc/).  Experiments that use hardware performance counters additionally requires linking with the included [**Intel Performance Counter Monitor**](http://www.intel.com/software/pcm) library.
+External dependencies are provided in binary form in this repository.  These are [**Spindle**](https://github.com/stanford-mast/Spindle), [**Silo**](https://github.com/stanford-mast/Silo), [**Parutil**](https://github.com/stanford-mast/Parutil), [**Topo**](https://github.com/stanford-mast/Topo), and [**hwloc**](https://www.open-mpi.org/projects/hwloc/).  The latter two libraries have build dependencies on `libpciaccess` and `libxml2`, both of which should be available as packages on a Linux distribution.
+
+Experiments that use hardware performance counters additionally require linking with the [**Intel Performance Counter Monitor**](http://www.intel.com/software/pcm) library, also included in binary form.  Note that this library has been deprecated and Wedge has not been updated to support its replacement, so it is not guaranteed that these experiments will work on state-of-the-art or future server platforms.  Furthermore, none of the results shown in the paper make use of this library.
 
 
 # Building
