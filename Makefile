@@ -22,6 +22,9 @@ LIBRARY_DEPENDENCIES        = libparutil libsilo libspindle libtopo libhwloc lib
 SOURCE_DIR                  = source
 INCLUDE_DIR                 = include
 
+THIRD_PARTY_INCLUDE_DIR     = third_party/include
+THIRD_PARTY_LIB_DIR         = third_party/lib
+
 OUTPUT_BASE_DIR             = output
 OUTPUT_DOCS_DIR             = $(OUTPUT_BASE_DIR)/docs
 OUTPUT_DIR                  = $(OUTPUT_BASE_DIR)/$(PLATFORM_NAME)
@@ -39,9 +42,9 @@ CC                          = gcc
 CXX                         = g++
 LD                          = g++
 
-CCFLAGS                     = -g -O3 -Wall -std=c11 -masm=intel -march=core-avx2 -mno-vzeroupper -pthread -I$(INCLUDE_DIR) -D_GNU_SOURCE
-CXXFLAGS                    = -g -O3 -Wall -std=c++11 -masm=intel -march=core-avx2 -mno-vzeroupper -pthread -I$(INCLUDE_DIR)
-LDFLAGS                     = -g
+CCFLAGS                     = -g -O3 -Wall -std=c11 -masm=intel -march=core-avx2 -mno-vzeroupper -pthread -I$(INCLUDE_DIR) -I$(THIRD_PARTY_INCLUDE_DIR) -D_GNU_SOURCE
+CXXFLAGS                    = -g -O3 -Wall -std=c++11 -masm=intel -march=core-avx2 -mno-vzeroupper -pthread -I$(INCLUDE_DIR) -I$(THIRD_PARTY_INCLUDE_DIR)
+LDFLAGS                     = -g -L$(THIRD_PARTY_LIB_DIR) -Wl,--verbose
 
 
 # --------- EXPERIMENTS -------------------------------------------------------
